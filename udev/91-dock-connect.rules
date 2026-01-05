@@ -1,0 +1,2 @@
+# Detect Lenovo dock connection and reload Hyprland
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", ATTR{idProduct}=="30b5", RUN+="/usr/bin/su aneesh -c '/home/aneesh/.local/bin/handle-redock.sh'"

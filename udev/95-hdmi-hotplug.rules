@@ -1,0 +1,10 @@
+# Automatic HDMI monitor hotplug detection for Hyprland
+# This rule triggers when any display device (HDMI, DisplayPort, etc.) is connected or disconnected
+
+# Trigger on DRM (Direct Rendering Manager) subsystem changes
+# This catches all display connection/disconnection events
+ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", RUN+="/usr/bin/su aneesh -c '/home/aneesh/.local/bin/auto-monitor.sh'"
+
+# Alternative: Trigger on specific connector changes (more targeted)
+# Uncomment if the above rule doesn't work or causes issues
+# ACTION=="change", KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/usr/bin/su aneesh -c '/home/aneesh/.local/bin/auto-monitor.sh'"
