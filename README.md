@@ -2,6 +2,8 @@
 
 Complete monitor configuration for Omarchy Linux (Hyprland) with Thunderbolt dock and hybrid graphics.
 
+**Now includes automatic recovery after sleep/wake and system updates!**
+
 ## Hardware Setup
 
 - **Laptop**: Lenovo ThinkPad P16 Gen3 / T16g Gen3
@@ -43,7 +45,24 @@ Complete monitor configuration for Omarchy Linux (Hyprland) with Thunderbolt doc
 
 **Important**: Dock displays (DP-7, DP-8) are dynamically created MST ports on the NVIDIA GPU when the Thunderbolt dock is connected.
 
-## Installation
+## Quick Installation (Recommended)
+
+Run the automated installer:
+
+```bash
+cd /home/aneesh/Code/scripts/omarchydisplaystuff
+chmod +x install-dock-solution.sh
+./install-dock-solution.sh
+```
+
+This installs everything including:
+- User scripts to `~/.local/bin/`
+- Hyprland configs to `~/.config/hypr/`
+- System sleep hook for automatic recovery after wake
+- Udev rules for hot-plug detection
+- User systemd service
+
+## Manual Installation
 
 ### 1. Copy Scripts
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Thunderbolt Dock Display Recovery after Resume
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/aneesh/.local/bin/thunderbolt-dock-init.sh
+Environment=HOME=/home/aneesh
+Environment=USER=aneesh
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
